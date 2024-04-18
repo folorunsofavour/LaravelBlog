@@ -71,25 +71,6 @@
                     </div>
                 </div>
 
-                <!-- Reply Form for the Comment Reply-->
-                <!-- <form id="replyForm"> -->
-                    <!-- @csrf -->
-                    <div class=" ml-16 flex mb-2">
-                        <!-- Avatar -->
-                        <div class="flex-shrink-0 mr-4">
-                            <img src="https://via.placeholder.com/50" alt="Avatar" class="rounded-full h-10 w-10">
-                        </div>
-                        <input type="text" name="post_id" id="postInput_{{$comment->id}}" value="{{ $blog->id }}" hidden>
-                        <input type="text" name="parent_id" id="parentInput_{{$comment->id}}" value="{{ $comment->id }}" hidden>
-                        <!-- Reply Input with Button -->
-                        <div class="flex-1 relative">
-                            <textarea name="reply" id="replyTextarea_{{$comment->id}}" rows="1" placeholder="Reply..." class="w-full rounded-lg shadow-sm p-2 border border-gray-300 focus:outline-none focus:border-blue-500"></textarea>
-                            <!-- Post Reply Button -->
-                            <button id="replyButton_{{$comment->id}}" class="absolute top-0 right-0 mt-2 mr-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded-lg focus:outline-none focus:shadow-outline">Reply</button>
-                        </div>
-                    </div>
-                <!-- </form> -->
-
                 <!-- Nested Replies for the Comment -->
                 @if(count($comment->replies)>0)
                     <!-- <div class="ml-16"> -->
@@ -115,6 +96,25 @@
                         <!-- Add more replies here if needed -->
                     <!-- </div> -->
                 @endif
+
+                <!-- Reply Form for the Comment Reply-->
+                <!-- <form id="replyForm"> -->
+                    <!-- @csrf -->
+                    <div class=" ml-16 flex mb-2">
+                        <!-- Avatar -->
+                        <div class="flex-shrink-0 mr-4">
+                            <img src="https://via.placeholder.com/50" alt="Avatar" class="rounded-full h-10 w-10">
+                        </div>
+                        <input type="text" name="post_id" id="postInput_{{$comment->id}}" value="{{ $blog->id }}" hidden>
+                        <input type="text" name="parent_id" id="parentInput_{{$comment->id}}" value="{{ $comment->id }}" hidden>
+                        <!-- Reply Input with Button -->
+                        <div class="flex-1 relative">
+                            <textarea name="reply" id="replyTextarea_{{$comment->id}}" rows="1" placeholder="Reply..." class="w-full rounded-lg shadow-sm p-2 border border-gray-300 focus:outline-none focus:border-blue-500"></textarea>
+                            <!-- Post Reply Button -->
+                            <button id="replyButton_{{$comment->id}}" class="absolute top-0 right-0 mt-2 mr-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded-lg focus:outline-none focus:shadow-outline">Reply</button>
+                        </div>
+                    </div>
+                <!-- </form> -->
             @endforeach 
              
         @else
