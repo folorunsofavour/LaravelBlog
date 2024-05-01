@@ -113,7 +113,7 @@ class BlogController extends Controller
             ]);
 
         return redirect(RouteServiceProvider::HOME)
-            ->with('message', 'Your post has been updated successfully!');
+            ->with('message', 'Your post has been updated Successfully!');
     }
 
     // Delete Blog
@@ -123,6 +123,6 @@ class BlogController extends Controller
         $blog->delete();
 
         return redirect('/blog')
-            ->with('message', 'Your post has been deleted successfully!');
+            ->with('message', 'Your post has been deleted Successfully!');
     }
 }
